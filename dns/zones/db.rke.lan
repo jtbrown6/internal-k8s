@@ -6,7 +6,7 @@ $TTL    604800
             2419200     ; Expire
              604800     ; Minimum
 )
-        IN      NS      ocp-svc
+        IN      NS      rke-services
 
 rke-services.komebacklabs.lan.          IN      A       192.168.10.1
 
