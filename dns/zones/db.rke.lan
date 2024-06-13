@@ -1,5 +1,5 @@
 $TTL    604800
-@       IN      SOA     ocp-svc.ocp.lan. contact.ocp.lan (
+@       IN      SOA     rke-services.komebacklabs.lan. contact.komebacklabs.lan (
                   1     ; Serial
              604800     ; Refresh
               86400     ; Retry
@@ -8,34 +8,32 @@ $TTL    604800
 )
         IN      NS      ocp-svc
 
-ocp-svc.ocp.lan.          IN      A       192.168.22.1
-
-; Temp Bootstrap Node
-ocp-bootstrap.lab.ocp.lan.        IN      A      192.168.22.200
+rke-services.komebacklabs.lan.          IN      A       192.168.10.1
 
 ; Control Plane Nodes
-ocp-cp-1.lab.ocp.lan.         IN      A      192.168.22.201
-ocp-cp-2.lab.ocp.lan.         IN      A      192.168.22.202
-ocp-cp-3.lab.ocp.lan.         IN      A      192.168.22.203
+rke-cp-1.komebacklabs.lan.         IN      A      192.168.10.201
+rke-cp-2.komebacklabs.lan.         IN      A      192.168.10.202
+rke-cp-3.komebacklabs.lan.         IN      A      192.168.10.203
 
 ; Worker Nodes
-ocp-w-1.lab.ocp.lan.        IN      A      192.168.22.211
-ocp-w-2.lab.ocp.lan.        IN      A      192.168.22.212
+rke-w-1.komebacklabs.lan.        IN      A      192.168.10.211
+rke-w-2.komebacklabs.lan.        IN      A      192.168.10.212
 
 ; OpenShift Internal - Load balancer
-api.lab.ocp.lan.        IN    A    192.168.22.1
-api-int.lab.ocp.lan.    IN    A    192.168.22.1
-*.apps.lab.ocp.lan.     IN    A    192.168.22.1
+;api.lab.ocp.lan.        IN    A    192.168.10.1
+;api-int.lab.ocp.lan.    IN    A    192.168.10.1
+;*.apps.komebacklabs.lan.     IN    A    192.168.22.1
 
 ; ETCD Cluster
-etcd-0.lab.ocp.lan.    IN    A     192.168.22.201
-etcd-1.lab.ocp.lan.    IN    A     192.168.22.202
-etcd-2.lab.ocp.lan.    IN    A     192.168.22.203
+;etcd-0.lab.ocp.lan.    IN    A     192.168.22.201
+;etcd-1.lab.ocp.lan.    IN    A     192.168.22.202
+;etcd-2.lab.ocp.lan.    IN    A     192.168.22.203
 
 ; OpenShift Internal SRV records (cluster name = lab)
-_etcd-server-ssl._tcp.lab.ocp.lan.    86400     IN    SRV     0    10    2380    etcd-0.lab
-_etcd-server-ssl._tcp.lab.ocp.lan.    86400     IN    SRV     0    10    2380    etcd-1.lab
-_etcd-server-ssl._tcp.lab.ocp.lan.    86400     IN    SRV     0    10    2380    etcd-2.lab
+;_etcd-server-ssl._tcp.lab.ocp.lan.    86400     IN    SRV     0    10    2380    etcd-0.lab
+;_etcd-server-ssl._tcp.lab.ocp.lan.    86400     IN    SRV     0    10    2380    etcd-1.lab
+;_etcd-server-ssl._tcp.lab.ocp.lan.    86400     IN    SRV     0    10    2380    etcd-2.lab
 
-oauth-openshift.apps.lab.ocp.lan.     IN     A     192.168.22.1
-console-openshift-console.apps.lab.ocp.lan.     IN     A     192.168.22.1
+;rancher.komebacklabs.lan.     IN     A     192.168.10.201
+;oauth-openshift.apps.lab.ocp.lan.     IN     A     192.168.22.1
+;console-openshift-console.apps.lab.ocp.lan.     IN     A     192.168.22.1
